@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/embarx-consumer/embarx-consumer.iml" filepath="$PROJECT_DIR$/embarx-consumer/embarx-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/embarx-producer/embarx-producer.iml" filepath="$PROJECT_DIR$/embarx-producer/embarx-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kafka-embarkx-learning.iml" filepath="$PROJECT_DIR$/.idea/kafka-embarkx-learning.iml" />
+    </modules>
+  </component>
+</project>
