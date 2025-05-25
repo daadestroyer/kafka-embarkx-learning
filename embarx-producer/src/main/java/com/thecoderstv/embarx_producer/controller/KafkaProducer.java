@@ -24,12 +24,13 @@ public class KafkaProducer {
     */
 
     // sending objects to kafka topic
+    /*
     @PostMapping("/send")
     public String sendMessage(@RequestParam String message) {
         RiderLocation riderLocation = new RiderLocation("rider101",10101.11,122323.4444);
         kafkaTemplate.send("my-topic-new", riderLocation); // message will be send to this topic
         return "Rider Location  :: " + riderLocation.getRiderId();
     }
-
+    */
 
 }

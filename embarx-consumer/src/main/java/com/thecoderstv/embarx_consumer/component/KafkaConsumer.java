@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class KafkaConsumer {
+
+    /*
     @KafkaListener(topics = "my-topic",groupId = "my-new-group")
     public void listen1(String message) {
         System.out.println("Received Message 1: " + message);
@@ -20,5 +22,5 @@ public class KafkaConsumer {
     public void consume(RiderLocation location) {
         System.out.println("Received = " + location);
     }
-
+    */
 }

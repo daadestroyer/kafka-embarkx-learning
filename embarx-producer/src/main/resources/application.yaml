@@ -1,3 +1,4 @@
+# configuration for normal kafka producer
 spring:
   server:
     port: 8083
@@ -9,11 +10,27 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.add.type.headers: false
+        spring.json.add.type.headers: true
+
+  # configuration for Spring Functions and Spring Cloud Streams
   cloud:
     function:
-      definition: uppercase;checkPalindrome
+      definition: uppercase;checkPalindrome;sendRiderLocation
+    stream:
+      function:
+        definition: sendRiderLocation
+      bindings:
+        sendRiderLocation-out-0: # out means, we are sending message
+            destination: my-topic-new
+            content-type: application/json # here im saying spring to convert object to json before send to kafka
+        poller:
+          fixed-delay: 5000
+
+      kafka:
+        binder:
+          brokers: localhost:9092
       web:
         path:
           uppercase: /uppercase
           checkPalindrome: /checkPalindrome
+
