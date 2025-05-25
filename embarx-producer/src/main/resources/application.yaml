@@ -1,4 +1,6 @@
 spring:
+  server:
+    port: 8083
   application:
     name: producer
   kafka:
@@ -8,5 +10,10 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.add.type.headers: false
-server:
-  port: 8083
+  cloud:
+    function:
+      definition: uppercase;checkPalindrome
+      web:
+        path:
+          uppercase: /uppercase
+          checkPalindrome: /checkPalindrome
